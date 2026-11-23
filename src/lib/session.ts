@@ -29,6 +29,7 @@ export function resetPollCount(): void {
   uploadCallCount = 0
 }
 
-export function getUploadUrl(sessionId: string, mode: 'file' | 'receipt' | 'portal' = 'portal'): string {
-  return `${window.location.origin}/?page=upload&mode=${mode}&session=${sessionId}`
+export function getUploadUrl(sessionId: string, base?: string): string {
+  const origin = (base || window.location.origin).replace(/\/$/, '')
+  return `${origin}/?page=upload&session=${sessionId}`
 }

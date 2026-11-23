@@ -2,12 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --canvas: 248 248 248;
+  --surface: 255 255 255;
+  --surface-variant: 243 243 243;
+  --text-primary: 26 26 26;
+  --text-secondary: 74 74 74;
+  --text-muted: 122 122 122;
+  --outline: 220 220 220;
+  --outline-subtle: 238 238 238;
+  --action-yellow: 255 222 88;
+  --action-on: 26 26 26;
+  --success: 27 138 62;
+  --error: 198 40 40;
+  --warning: 183 121 31;
+  color-scheme: light;
+}
+
+.dark {
+  --canvas: 14 14 14;
+  --surface: 22 22 22;
+  --surface-variant: 34 34 34;
+  --text-primary: 245 245 245;
+  --text-secondary: 200 200 200;
+  --text-muted: 141 141 141;
+  --outline: 46 46 46;
+  --outline-subtle: 36 36 36;
+  --action-yellow: 255 222 88;
+  --action-on: 26 26 26;
+  --success: 70 196 106;
+  --error: 255 107 107;
+  --warning: 255 193 74;
+  color-scheme: dark;
+}
+
 body {
-  background-color: #f8f8f8;
+  background-color: rgb(var(--canvas));
+  color: rgb(var(--text-primary));
   font-family: system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 * {
   -webkit-tap-highlight-color: transparent;
+}
+
+.gg-doc p {
+  margin: 0 0 0.75rem;
+}
+
+.gg-doc table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 0.75rem;
+}
+
+.gg-doc td,
+.gg-doc th {
+  border: 1px solid #ddd;
+  padding: 4px 6px;
+}
+
+.gg-doc img {
+  max-width: 100%;
+  height: auto;
 }

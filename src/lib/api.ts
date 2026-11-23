@@ -29,7 +29,6 @@ export async function submitPayment(
 }
 
 export async function uploadFile(_file: File, _purpose: string): Promise<string> {
-  // POST /files?purpose=payment_proof
   await new Promise((r) => setTimeout(r, 800))
   return 'file_mock_' + Math.random().toString(36).substring(2, 8)
 }

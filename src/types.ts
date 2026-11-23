@@ -2,28 +2,27 @@
 
 export type Screen =
   | 'welcome'
-  | 'print-settings'
   | 'scan-qr'
-  | 'file-received'
-  | 'start-printing'
-  | 'printing-progress'
+  | 'print-settings'
+  | 'pay'
+  | 'paid'
+  | 'printing'
   | 'confirmation'
 
 export type PageRangeOption = 'all' | 'odd' | 'even' | 'custom'
 export type PaperSize = 'A4' | 'Legal' | 'Letter'
 export type ColorMode = 'bw' | 'color'
+export type SideMode = 'one' | 'two'
+export type LayoutMode = 'fit' | 'actual' | 'actual-top-left'
+export type PrinterStatus = 'online' | 'offline' | 'out_of_paper' | 'paper_jam'
+export type ThemeMode = 'auto' | 'light' | 'dark'
+export type PaymentMethod = 'qr' | 'coins'
 
 export interface UploadedDocument {
   fileName: string
   fileSize: string
   pageCount: number
-}
-
-export interface UploadedReceipt {
-  fileName: string
-  fileSize: string
-  reference?: string
-  thumbnailUrl?: string
+  mime?: string
 }
 
 export interface PrintSettings {
@@ -32,12 +31,14 @@ export interface PrintSettings {
   quantity: number
   paperSize: PaperSize
   colorMode: ColorMode
+  sides: SideMode
+  layout: LayoutMode
+  previewConfirmed: boolean
 }
 
 export interface KioskOrder {
   id: string
   document?: UploadedDocument
-  receipt?: UploadedReceipt
   settings: PrintSettings
   totalMinor: number
   status: 'awaiting_initial_payment' | 'initial_payment_review' | 'payment_authorized'

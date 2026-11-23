@@ -25,7 +25,7 @@ const CONFIG: Record<UploadSessionState, { icon: string; label: string; color: s
   },
   ready: {
     icon: '✓',
-    label: 'Receipt received',
+    label: 'File received',
     color: 'text-success',
   },
   failed: {

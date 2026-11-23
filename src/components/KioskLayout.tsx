@@ -50,7 +50,7 @@ export function CartChip() {
 
   return (
     <button
-      onClick={() => setScreen('file-received')}
+      onClick={() => setScreen('scan-qr')}
       className="flex items-center gap-1.5 bg-text-primary text-white text-xs font-semibold px-3 py-1.5 rounded-full min-h-[36px]"
     >
       <span className="w-2 h-2 rounded-full bg-success animate-pulse" />

@@ -1,23 +1,28 @@
 import type { Config } from 'tailwindcss'
 
+function rgb(token: string) {
+  return `rgb(var(${token}) / <alpha-value>)`
+}
+
 const config: Config = {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        canvas: '#f8f8f8',
-        surface: '#ffffff',
-        'surface-variant': '#f0f0f0',
-        'text-primary': '#1a1a1a',
-        'text-secondary': '#4a4a4a',
-        'text-muted': '#7a7a7a',
-        outline: '#dcdcdc',
-        'outline-subtle': '#eeeeee',
-        'action-yellow': '#ffde58',
-        'action-on': '#1a1a1a',
-        success: '#2e7d32',
-        error: '#c62828',
-        warning: '#f57f17',
+        canvas: rgb('--canvas'),
+        surface: rgb('--surface'),
+        'surface-variant': rgb('--surface-variant'),
+        'text-primary': rgb('--text-primary'),
+        'text-secondary': rgb('--text-secondary'),
+        'text-muted': rgb('--text-muted'),
+        outline: rgb('--outline'),
+        'outline-subtle': rgb('--outline-subtle'),
+        'action-yellow': rgb('--action-yellow'),
+        'action-on': rgb('--action-on'),
+        success: rgb('--success'),
+        error: rgb('--error'),
+        warning: rgb('--warning'),
       },
     },
   },
